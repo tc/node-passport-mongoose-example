@@ -1,0 +1,40 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+      <div id="navbar">
+        {{#if user}}
+            <div class="navbar-right">
+                {{#if user}}
+                    Hi {{user.username}}
+                    <a href='/logout' class='btn btn-success text-center new-account'> Logout</a>
+                {{/if}}
+            </div>
+
+        {{else}}
+            <div class="navbar-right">
+               <a href='/signup' class='btn btn-success text-center new-account'> Create an account</a>
+            </div>
+            <form class="navbar-form navbar-right" action='/login'  method='POST'>
+              <input type='text'  name='username' class='form-control'  placeholder='Email' required  autofocus />
+              <input type='password'  name='password' class='form-control'  placeholder='Password'  required />
+              <button class='btn btn-primary'  type='submit'> Login</button>
+            </form>
+        {{/if}}
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <div class="container">
+      <h1>Node Express Passport Mongoose Example</h1>
+    {{#if message}}
+    <div class="alert alert-danger" role="alert">
+        {{message}}
+    </div>
+    {{/if}}
+    {{#if error}}
+    <div class="alert alert-danger" role="alert">
+        {{error}}
+    </div>
+    {{/if}}
+    </div>
+</div>

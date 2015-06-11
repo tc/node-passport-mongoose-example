@@ -1,0 +1,24 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+      <div id="navbar">
+      </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <div class="container">
+    <form action='/signup'  method='POST'>
+      <input type='text'  name='username' class='form-control'  placeholder='username' required  autofocus />
+      <input type='email'  name='email' class='form-control'  placeholder='Email' required  autofocus />
+      <input type='password'  name='password' class='form-control'  placeholder='Password'  required />
+      <button class='btn btn-lg btn-primary'  type='submit'> Create Account</button>
+    </form>
+
+    {{#if message}}
+    <div class="error-message">{{message}}</div>
+    {{/if}}
+    {{#if error}}
+    <div class="error-message">{{error}}</div>
+    {{/if}}
+    </div>
+</div>
