@@ -66,7 +66,9 @@
   ],
   "scripts": {
     "debug-dev": "nodemon --debug app.js",
-    "start-dev": "nodemon app.js"
+    "start-dev": "nodemon app.js",
+    "test": "APP_ENV=test ./node_modules/.bin/_mocha test/unit --recursive --reporter tap --timeout 35000",
+    "functional_test": "APP_ENV=test ./node_modules/.bin/_mocha test/functional  --recursive --reporter tap --timeout 35000"
   },
   "version": "0.0.1"
 }

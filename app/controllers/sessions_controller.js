@@ -3,7 +3,7 @@ var passport = require('passport');
 
 var controller = {
 
-    login: function(req,res, next) {
+    login: function(req, res, next) {
       passport.authenticate('login', function(err, user, info) {
         if (err) {
             logger.error(err);
@@ -11,6 +11,7 @@ var controller = {
         }
 
         if (!user) {
+            logger.error(info);
             return res.redirect('/');
         }
 
